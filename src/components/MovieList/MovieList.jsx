@@ -3,6 +3,9 @@ import css from "./MovieList.module.css";
 
 const MovieList = ({ movies }) => {
   const location = useLocation();
+  if (!Array.isArray(movies)) {
+    return <p>No movies available</p>;
+  }
 
   return (
     <ul className={css.movie_list}>

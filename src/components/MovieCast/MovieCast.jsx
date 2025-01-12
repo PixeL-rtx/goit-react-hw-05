@@ -13,10 +13,12 @@ const MovieCast = () => {
       const queryMovie = async () => {
         const {
           data: { cast },
-        } = await getCastMovie(movieID);
+        } = await getCastMovie(moviesID);
+
         setMovie(cast);
       };
-      queryMovie(cast);
+
+      queryMovie();
     } catch (error) {
       toast.error(error);
     }

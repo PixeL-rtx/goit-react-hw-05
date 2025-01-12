@@ -46,7 +46,9 @@ const MoviesPage = () => {
             name="movieQuery"
             placeholder="Enter movie title"
           />
-          <button className={css.SubmitBtn}>Search</button>
+          <button className={css.SubmitBtn} type="submit">
+            Search
+          </button>
         </Form>
       </Formik>
 
