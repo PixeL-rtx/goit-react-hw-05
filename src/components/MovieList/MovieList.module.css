@@ -1,0 +1,29 @@
+.movie_list {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  padding: 12px 24px;
+  gap: 12px;
+}
+
+.movie_link {
+  text-decoration: none;
+  font-size: 18px;
+  color: #611f1f;
+  transition: all 100ms ease-in-out;
+  display: inline-block;
+  position: relative;
+}
+
+.movie_link:hover {
+  color: #a11a1a;
+}
+
+.title {
+  display: inline-block;
+  transition: all 100ms ease-in-out;
+}
+
+.movie_link:hover .title {
+  transform: translateX(22px);
+}

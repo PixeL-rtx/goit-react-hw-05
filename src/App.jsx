@@ -1,35 +1,49 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import css from "/src/App.module.css";
+import { Route, Routes, NavLink } from "react-router-dom";
+import clsx from "clsx";
+import { lazy, Suspense } from "react";
+import Loader from "./Loader/Loader.jsx";
+
+const HomePage = lazy(() => import("./Pages/HomePage/HomePage.jsx"));
+const MoviesPage = lazy(() => import("./Pages/MoviesPage/MoviesPage.jsx"));
+const NotFoundPage = lazy(() =>
+  import("./Pages/NotFoundPage/NotFoundPage.jsx")
+);
+const MovieDetailsPage = lazy(() =>
+  import("./Pages/MovieDetailsPage/MovieDetailsPage.jsx")
+);
+const MovieCast = lazy(() => import("./components/MovieCast/MovieCast.jsx"));
+const MovieReviews = lazy(() =>
+  import("./components/MovieReviews/MovieReviews.jsx")
+);
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const linkActiveStyle = ({ isActive }) => {
+    return clsx(css.link, isActive && css.active);
+  };
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div className="AllContainer">
+      <Suspense fallback={<Loader />}>
+        <nav>
+          <NavLink to="/" className={linkActiveStyle}>
+            Home
+          </NavLink>
+          <NavLink to="/movies" className={linkActiveStyle}>
+            Movies
+          </NavLink>
+        </nav>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/movies" element={<MoviesPage />} />
+          <Route path="/movies/:moviesID" element={<MovieDetailsPage />}>
+            <Route path="cast" element={<MovieCast />} />
+            <Route path="reviews" element={<MovieReviews />} />
+          </Route>
 
-export default App
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </Suspense>
+    </div>
+  );
+}
+export default App;
