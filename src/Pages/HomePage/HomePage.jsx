@@ -11,7 +11,7 @@ const HomePage = () => {
       const { results } = await getMovies();
       setMovies(results);
     };
-    fetchMovies;
+    fetchMovies();
   }, []);
   return (
     <div>

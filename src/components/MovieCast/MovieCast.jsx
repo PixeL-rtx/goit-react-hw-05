@@ -27,7 +27,7 @@ const MovieCast = () => {
   return (
     <div>
       {movies.length ? (
-        <ul className={actor_list}>
+        <ul className={css.actor_list}>
           {movies.map((item, index) => (
             <li key={index}>
               <div className={css.actor_container}>
@@ -40,7 +40,7 @@ const MovieCast = () => {
           ))}
         </ul>
       ) : (
-        <p className={reviews_error}>No information about actors</p>
+        <p className={css.reviews_error}>No information about actors</p>
       )}
     </div>
   );

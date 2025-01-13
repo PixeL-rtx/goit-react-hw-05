@@ -4,37 +4,39 @@ import toast from "react-hot-toast";
 import { useEffect, useState } from "react";
 import MovieList from "../../components/MovieList/MovieList";
 import { searchMovieKey } from "../../apiKey";
+import { useSearchParams } from "react-router-dom";
 
 const MoviesPage = () => {
-  const initialValues = {
-    movieQuery: "",
-  };
+  const [searchParams, setSearchParams] = useSearchParams();
+  const movie = searchParams.get("movie") || "";
 
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState(movie);
   const [dataMovie, setDataMovie] = useState("");
 
+  const initialValues = {
+    movieQuery: movie,
+  };
+
+  useEffect(() => {
+    try {
+      const searchMovie = async () => {
+        if (!query) return;
+        const { data } = await searchMovieKey(query);
+        setDataMovie(data.results);
+      };
+      searchMovie();
+    } catch (error) {
+      toast.error(error);
+    }
+  }, [query]);
   const handleSubmit = (values) => {
     if (!values.movieQuery) {
       toast.error("Field is empty, please enter your query...");
       return;
     }
     setQuery(values.movieQuery);
+    setSearchParams({ movie: values.movieQuery });
   };
-
-  useEffect(() => {
-    try {
-      const setDataMovie = async () => {
-        if (!query) {
-          const { data } = await searchMovieKey(query);
-          setDataMovie(data.results);
-        }
-        setDataMovie;
-      };
-      setDataMovie();
-    } catch (error) {
-      toast.error(error);
-    }
-  }, [query]);
 
   return (
     <div>

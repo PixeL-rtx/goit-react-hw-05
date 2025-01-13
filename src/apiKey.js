@@ -9,7 +9,7 @@ const options = {
 
 export const getMovies = async () => {
   const { data } = await axios.get(
-    `https://api.themoviedb.org/3/trending/movie/day?language=en-US`,
+    "https://api.themoviedb.org/3/trending/movie/day?language=en-US",
     options
   );
   return data;
@@ -38,7 +38,8 @@ export const searchMovieKey = async (key) => {
 };
 export const getReviewsMovie = async (movieID) => {
   const data = await axios.get(
-    `https://api.themoviedb.org/3/movie/${movieID}/reviews?language=en-US`,
+    `https://api.themoviedb.org/3/search/movie?query=${query}&include_adult=false&language=en-US&page=1`,
     options
   );
+  return data;
 };
