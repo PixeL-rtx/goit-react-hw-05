@@ -10,7 +10,7 @@
   align-items: center;
 }
 
-.inf-container {
+.inf_container {
   max-width: 500px;
 
   display: flex;
@@ -20,7 +20,7 @@
 }
 
 .back {
-  position: absolute;
+  /* position: absolute; */
   top: 20px;
   left: 20px;
   padding: 12px 18px;
@@ -51,7 +51,7 @@
   align-items: center;
 } */
 
-.more-inf-container {
+.more_inf_container {
   padding: 48px 0;
   display: flex;
   align-items: stretch;
@@ -59,7 +59,7 @@
   gap: 28px;
 }
 
-.more-inf-link {
+.more_inf_link {
   color: #066b84;
   font-size: 22px;
   font-weight: 600;
@@ -68,6 +68,6 @@
   transition: all 200ms ease-in-out;
 }
 
-.more-inf-link:hover {
+.more_inf_link:hover {
   color: #066b84;
 }

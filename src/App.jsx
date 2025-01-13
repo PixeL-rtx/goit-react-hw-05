@@ -24,7 +24,7 @@ function App() {
   return (
     <div className="AllContainer">
       <Suspense fallback={<Loader />}>
-        <nav>
+        <nav className={css.nav_list}>
           <NavLink to="/" className={linkActiveStyle}>
             Home
           </NavLink>
