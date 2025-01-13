@@ -56,11 +56,11 @@ const MovieReviews = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    const fetchReviews = async () => {
+    const queryReviews = async () => {
       setIsLoading(true);
       try {
         const { data } = await getReviewsMovie(moviesID);
-        setReviews(data.results);
+        setReviews(reviews);
       } catch (error) {
         toast.error("Failed to load reviews");
       } finally {
@@ -68,7 +68,7 @@ const MovieReviews = () => {
       }
     };
 
-    fetchReviews();
+    queryReviews();
   }, [moviesID]);
 
   if (isLoading) {

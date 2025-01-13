@@ -1,0 +1,29 @@
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  padding: 28px 0;
+  border-bottom: 2px solid #066b84;
+}
+
+.link {
+  color: #066b84;
+  font-size: 22px;
+  font-weight: 600;
+  text-decoration: none;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+
+  transition: all 200ms ease-in-out;
+}
+
+.link:hover {
+  color: #033c4b;
+}
+
+.active {
+  text-decoration: underline;
+  color: #033c4b;
+  text-decoration-color: #033c4b;
+  text-decoration-thickness: 2px;
+}
