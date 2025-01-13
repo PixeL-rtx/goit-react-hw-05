@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getCastMovie } from "../../api-query";
+import { getCastMovie } from "../../apiKey";
 import toast from "react-hot-toast";
 import css from "./MovieCast.module.css";
 

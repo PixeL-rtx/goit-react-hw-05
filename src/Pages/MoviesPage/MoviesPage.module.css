@@ -9,8 +9,8 @@
 .field {
   padding: 12px 18px;
   border-radius: 12px;
-  border: 1px solid #611f1f;
-  color: #611f1f;
+  border: 1px solid #066b84;
+  color: #066b84;
   outline: none;
 
   transition: all 200ms ease-in-out;
@@ -26,8 +26,8 @@
   padding: 8px 22px;
   background-color: transparent;
   border-radius: 12px;
-  border: 1px solid #611f1f;
-  color: #611f1f;
+  border: 1px solid #066b84;
+  color: #066b84;
   font-size: 18px;
   transition: all 200ms ease-in-out;
 }

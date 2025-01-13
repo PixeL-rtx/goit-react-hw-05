@@ -1,6 +1,6 @@
 .details {
   padding: 48px 0;
-  border-bottom: 2px solid #611f1f;
+  border-bottom: 2px solid #066b84;
 }
 
 .details_item {
@@ -24,8 +24,8 @@
   top: 20px;
   left: 20px;
   padding: 12px 18px;
-  border: 1px solid #611f1f;
-  color: #611f1f;
+  border: 1px solid #066b84;
+  color: #066b84;
   border-radius: 12px;
   background-color: transparent;
   cursor: pointer;
@@ -36,7 +36,7 @@
 }
 
 .back:hover {
-  color: #a11a1a;
+  color: #066b84;
 }
 
 /* .loader {
@@ -60,7 +60,7 @@
 }
 
 .more-inf-link {
-  color: #611f1f;
+  color: #066b84;
   font-size: 22px;
   font-weight: 600;
   text-decoration: none;
@@ -69,5 +69,5 @@
 }
 
 .more-inf-link:hover {
-  color: #a11a1a;
+  color: #066b84;
 }

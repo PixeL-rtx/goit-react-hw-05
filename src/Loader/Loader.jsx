@@ -5,7 +5,7 @@ const Loader = () => {
     <div className={css.loader}>
       <FallingLines
         width="100"
-        color="#ce4514"
+        color="#066b84"
         ariaLabel="falling-circles-loading"
         wrapperStyle={{}}
         wrapperClass=""

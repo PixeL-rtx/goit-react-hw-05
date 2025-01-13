@@ -4,11 +4,11 @@
   justify-content: center;
   gap: 28px;
   padding: 28px 0;
-  border-bottom: 2px solid #611f1f;
+  border-bottom: 2px solid #066b84;
 }
 
 .link {
-  color: #611f1f;
+  color: #066b84;
   font-size: 22px;
   font-weight: 600;
   text-decoration: none;
@@ -18,13 +18,13 @@
 }
 
 .link:hover {
-  color: #a11a1a;
+  color: #066b84;
 }
 
 .active {
   text-decoration: underline;
-  color: #a11a1a;
-  text-decoration-color: #a11a1a;
+  color: #033c4b;
+  text-decoration-color: #033c4b;
   text-decoration-thickness: 2px;
 }
 

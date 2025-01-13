@@ -9,14 +9,14 @@
 .movie_link {
   text-decoration: none;
   font-size: 18px;
-  color: #611f1f;
+  color: #066b84;
   transition: all 100ms ease-in-out;
   display: inline-block;
   position: relative;
 }
 
 .movie_link:hover {
-  color: #a11a1a;
+  color: #066b84;
 }
 
 .title {
