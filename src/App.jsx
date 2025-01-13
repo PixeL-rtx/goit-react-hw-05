@@ -4,7 +4,7 @@ import clsx from "clsx";
 import { lazy, Suspense } from "react";
 import Loader from "./Loader/Loader.jsx";
 
-const HomePage = lazy(() => import("./pages/HomePage/HomePage.jsx"));
+// const HomePage = lazy(() => import("./pages/HomePage/HomePage.jsx"));
 const MoviesPage = lazy(() => import("./pages/MoviesPage/MoviesPage.jsx"));
 const NotFoundPage = lazy(() =>
   import("./pages/NotFoundPage/NotFoundPage.jsx")
