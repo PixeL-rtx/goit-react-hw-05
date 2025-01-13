@@ -23,7 +23,7 @@ function App() {
   };
   return (
     <div className="AllContainer">
-      {/* <Suspense fallback={<Loader />}> */}
+      <Suspense fallback={<Loader />}>
         <nav className={css.nav_list}>
           <NavLink to="/" className={linkActiveStyle}>
             Home
