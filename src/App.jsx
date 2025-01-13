@@ -4,13 +4,13 @@ import clsx from "clsx";
 import { lazy, Suspense } from "react";
 import Loader from "./Loader/Loader.jsx";
 
-const HomePage = lazy(() => import("./Pages/HomePage/HomePage.jsx"));
-const MoviesPage = lazy(() => import("./Pages/MoviesPage/MoviesPage.jsx"));
+const HomePage = lazy(() => import("./pages/HomePage/HomePage.jsx"));
+const MoviesPage = lazy(() => import("./pages/MoviesPage/MoviesPage.jsx"));
 const NotFoundPage = lazy(() =>
-  import("./Pages/NotFoundPage/NotFoundPage.jsx")
+  import("./pages/NotFoundPage/NotFoundPage.jsx")
 );
 const MovieDetailsPage = lazy(() =>
-  import("./Pages/MovieDetailsPage/MovieDetailsPage.jsx")
+  import("./pages/MovieDetailsPage/MovieDetailsPage.jsx")
 );
 const MovieCast = lazy(() => import("./components/MovieCast/MovieCast.jsx"));
 const MovieReviews = lazy(() =>
