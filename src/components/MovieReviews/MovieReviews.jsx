@@ -45,7 +45,7 @@
 // export default MovieReviews;
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getReviewsMovie } from "../../apiKey"; // Предполагается, что у вас есть такая функция для получения отзывов
+import { getReviewsMovie } from "../../apiKey";
 import css from "./MovieReviews.module.css";
 import Loader from "../../Loader/Loader";
 import toast from "react-hot-toast";

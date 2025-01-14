@@ -22,7 +22,7 @@ function App() {
     return clsx(css.link, isActive && css.active);
   };
   return (
-    <div className="AllContainer">
+    <div className={css.All_Container}>
       <Suspense fallback={<Loader />}>
         <nav className={css.nav_list}>
           <NavLink to="/" className={linkActiveStyle}>

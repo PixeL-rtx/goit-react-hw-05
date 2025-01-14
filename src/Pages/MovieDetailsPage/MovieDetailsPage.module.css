@@ -1,4 +1,6 @@
 .details {
+  display: flex;
+
   padding: 48px 0;
   border-bottom: 2px solid #066b84;
 }
