@@ -15,6 +15,7 @@ const MovieCast = lazy(() => import("./components/MovieCast/MovieCast"));
 const MovieReviews = lazy(() =>
   import("./components/MovieReviews/MovieReviews")
 );
+const Navigation = lazy(() => import("./components/Navigation/Navigation"));
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
       <Navigation />
       <Suspense
         fallback={
-          <div>
+          <div className={css.loader}>
             <Puff color="#611f1f" height={80} width={80} />
           </div>
         }

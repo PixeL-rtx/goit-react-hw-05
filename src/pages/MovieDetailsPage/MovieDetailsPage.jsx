@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { NavLink, Outlet, useLocation, useParams } from "react-router-dom";
 import { getInfMovie } from "../../apiKey";
 import css from "./MovieDetailsPage.module.css";
-import { Loader } from "react-loader-spinner";
+import { FallingLines } from "react-loader-spinner";
 import toast from "react-hot-toast";
 
 const MovieDetailsPage = () => {
@@ -33,7 +33,7 @@ const MovieDetailsPage = () => {
         Go back
       </NavLink>
 
-      {loading && <Loader />}
+      <FallingLines color="#066b84" height={80} width={80} />
       <ul className={css["details-list"]}>
         {infMovie.map((item) => (
           <li key={item.id} className={css["details-item"]}>

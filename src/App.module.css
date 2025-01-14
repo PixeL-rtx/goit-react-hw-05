@@ -30,7 +30,7 @@
   text-decoration-thickness: 3px;
 }
 
-/* .fallback {
+.fallback {
   position: fixed;
   top: 0;
   left: 0;
@@ -40,7 +40,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-} */
+}
 .nav_list {
   display: flex;
   gap: 30px;
