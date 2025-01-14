@@ -2,10 +2,10 @@ import { Route, Routes } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import { Puff } from "react-loader-spinner";
 import css from "./App.module.css";
-import HomePage from "./pages/HomePage/HomePage";
-import Navigation from "./components/Navigation/Navigation";
-import Loader from "./Loader/Loader";
 
+// import Loader from "./Loader/Loader";
+
+const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
 const MoviesPage = lazy(() => import("./pages/MoviesPage/MoviesPage"));
 const NotFoundPage = lazy(() => import("./pages/NotFoundPage/NotFoundPage"));
 const MovieDetailsPage = lazy(() =>
@@ -23,7 +23,7 @@ function App() {
       <Suspense
         fallback={
           <div>
-            <Loader />
+            <Puff color="#611f1f" height={80} width={80} />
           </div>
         }
       >

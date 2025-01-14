@@ -2,30 +2,30 @@ import { useEffect, useRef, useState } from "react";
 import { NavLink, Outlet, useLocation, useParams } from "react-router-dom";
 import { getInfMovie } from "../../apiKey";
 import css from "./MovieDetailsPage.module.css";
-import { Puff } from "react-loader-spinner";
+import { Loader } from "react-loader-spinner";
 import toast from "react-hot-toast";
 
 const MovieDetailsPage = () => {
   const { moviesId } = useParams();
   const [infMovie, setInfMovie] = useState([]);
-  const [loader, setLoader] = useState(false);
+  const [loading, setLoading] = useState(false);
   const location = useLocation();
   const goBackRef = useRef(location.state ?? "/movies");
 
   useEffect(() => {
-    try {
-      const queryInfMovie = async () => {
-        setLoader(true);
-        const { data } = await getInfMovie(moviesId.toString());
-
+    const queryInfoMovie = async () => {
+      setLoading(true);
+      try {
+        const { data } = await getMoviesInfo(moviesId.toString());
         setInfMovie([data]);
-      };
-      queryInfMovie();
-    } catch (error) {
-      toast.error(error);
-    } finally {
-      setLoader(false);
-    }
+      } catch (error) {
+        toast.error("Failed to load movie details. Please try again.");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    queryInfoMovie();
   }, [moviesId]);
   return (
     <div style={{ position: "relative" }}>
@@ -33,11 +33,7 @@ const MovieDetailsPage = () => {
         Go back
       </NavLink>
 
-      {loader && (
-        <div className={css.loader}>
-          <Puff height="80" width="80" color="#611f1f" visible={true} />
-        </div>
-      )}
+      {loading && <Loader />}
       <ul className={css["details-list"]}>
         {infMovie.map((item) => (
           <li key={item.id} className={css["details-item"]}>
