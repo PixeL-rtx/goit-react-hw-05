@@ -1,18 +1,16 @@
-.details {
-  display: flex;
-
+.details-list {
   padding: 48px 0;
-  border-bottom: 3px solid #066b84;
+  border-bottom: 2px solid #066b84;
 }
 
-.details_item {
+.details-item {
   display: flex;
   justify-content: center;
   gap: 52px;
   align-items: center;
 }
 
-.inf_container {
+.inf-container {
   max-width: 500px;
 
   display: flex;
@@ -22,7 +20,7 @@
 }
 
 .back {
-  /* position: absolute; */
+  position: absolute;
   top: 20px;
   left: 20px;
   padding: 12px 18px;
@@ -38,10 +36,10 @@
 }
 
 .back:hover {
-  color: #066b84;
+  color: #033c4b;
 }
 
-/* .loader {
+.loader {
   position: fixed;
   top: 0;
   left: 0;
@@ -51,9 +49,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-} */
+}
 
-.more_inf_container {
+.more-inf-container {
   padding: 48px 0;
   display: flex;
   align-items: stretch;
@@ -61,8 +59,8 @@
   gap: 28px;
 }
 
-.more_inf_link {
-  color: #066b84;
+.more-inf-link {
+  color: #033c4b;
   font-size: 22px;
   font-weight: 600;
   text-decoration: none;
@@ -70,6 +68,6 @@
   transition: all 200ms ease-in-out;
 }
 
-.more_inf_link:hover {
-  color: #066b84;
+.more-inf-link:hover {
+  color: #033c4b;
 }

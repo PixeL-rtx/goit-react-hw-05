@@ -43,53 +43,112 @@
 // };
 
 // export default MovieReviews;
-import { useEffect, useState } from "react";
+
+//////////////////////////////////////
+
+// import { useEffect, useState } from "react";
+// import { useParams } from "react-router-dom";
+// import { getReviewsMovie } from "../../apiKey";
+// import css from "./MovieReviews.module.css";
+// import Loader from "../../Loader/Loader";
+// import toast from "react-hot-toast";
+
+// const MovieReviews = () => {
+//   const { moviesId } = useParams();
+//   console.log(moviesId);
+//   const [reviews, setReviews] = useState([]);
+//   const [loader, setLoader] = useState(false);
+
+//   useEffect(() => {
+//     const queryReviews = async () => {
+//       try {
+//         setLoader(true);
+//         const {
+//           data: { results },
+//         } = await getReviewsMovie(moviesId);
+//         setReviews(reviews);
+//       } catch (error) {
+//         toast.error(error);
+//       } finally {
+//         setLoader(false);
+//       }
+//     };
+
+//     queryReviews();
+//   }, [moviesId]);
+
+//   if (loader) {
+//     return <Loader />;
+//   }
+
+//   if (reviews.length === 0) {
+//     return (
+//       <p className={css.no_reviews}>No reviews available for this movie.</p>
+//     );
+//   }
+
+//   return (
+//     <div>
+//       {loader && <p className={css["no-reviews-err"]}>Wait...</p>}
+//       <ul className={css.reviews_list}>
+//         {reviews.map((review) => (
+//           <li key={review.id} className={css.review_item}>
+//             <h3 className={css.author}>{review.author}</h3>
+//             <p className={css.content}>{review.content}</p>
+//           </li>
+//         ))}
+//       </ul>
+//     </div>
+//   );
+// };
+
+// export default MovieReviews;
+
+///////////////////////////////
+
 import { useParams } from "react-router-dom";
-import { getReviewsMovie } from "../../apiKey";
-import css from "./MovieReviews.module.css";
-import Loader from "../../Loader/Loader";
+import { useState, useEffect } from "react";
 import toast from "react-hot-toast";
+import { getReviewsMovie } from "../../api-query";
+import css from "./MovieReviews.module.css";
 
 const MovieReviews = () => {
-  const { moviesID } = useParams();
-  const [reviews, setReviews] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const { moviesId } = useParams();
+  const [reviewMovie, setReviewMovie] = useState([]);
+  const [loader, setLoader] = useState(false);
 
   useEffect(() => {
-    const queryReviews = async () => {
-      setIsLoading(true);
+    const queryMovieReviews = async () => {
       try {
-        const { data } = await getReviewsMovie(moviesID);
-        setReviews(reviews);
+        setLoader(true);
+        const {
+          data: { results },
+        } = await getReviewsMovie(moviesId);
+        setReviewMovie(results);
       } catch (error) {
-        toast.error("Failed to load reviews");
+        toast.error(error);
       } finally {
-        setIsLoading(false);
+        setLoader(false);
       }
     };
-
-    queryReviews();
-  }, [moviesID]);
-
-  if (isLoading) {
-    return <Loader />;
-  }
-
-  if (reviews.length === 0) {
-    return (
-      <p className={css.no_reviews}>No reviews available for this movie.</p>
-    );
-  }
+    queryMovieReviews();
+  }, [moviesId]);
 
   return (
-    <ul className={css.reviews_list}>
-      {reviews.map((review) => (
-        <li key={review.id} className={css.review_item}>
-          <h3 className={css.author}>{review.author}</h3>
-          <p className={css.content}>{review.content}</p>
-        </li>
-      ))}
-    </ul>
+    <div>
+      {loader && <p className={css["no-reviews-err"]}>Wait...</p>}
+
+      <ul className={css["reviews-list"]}>
+        {reviewMovie.map((item, index) => (
+          <li key={index} className={css["reviews-item"]}>
+            <h3>
+              {index + 1}. User: {item.author}
+            </h3>
+            <p style={{ maxWidth: "95%" }}>{item.content}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 };
 

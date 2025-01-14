@@ -1,21 +1,18 @@
-.reviews_list {
+.reviews-list {
   padding-left: 24px;
   padding-bottom: 48px;
 }
 
-.reviews_item {
+.reviews-item {
   display: flex;
   flex-direction: column;
   gap: 12px;
   margin-top: 28px;
 }
 
-.movie_reviews_error {
+.no-reviews-err {
   text-align: center;
   padding-bottom: 48px;
   font-size: 22px;
   color: #066b84;
-}
-.text_reviews {
-  max-width: 95%;
 }

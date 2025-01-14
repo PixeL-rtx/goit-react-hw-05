@@ -1,8 +1,14 @@
 .navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  padding: 28px 0;
+  border-bottom: 2px solid 066b84;
 }
 
 .link {
-  color: #066b84;
+  color: 066b84;
   font-size: 22px;
   font-weight: 600;
   text-decoration: none;
