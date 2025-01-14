@@ -4,18 +4,18 @@ import clsx from "clsx";
 import { lazy, Suspense } from "react";
 import Loader from "./Loader/Loader.jsx";
 
-// const HomePage = lazy(() => import("./pages/HomePage/HomePage.jsx"));
-// const MoviesPage = lazy(() => import("./pages/MoviesPage/MoviesPage.jsx"));
-// const NotFoundPage = lazy(() =>
-//   import("./pages/NotFoundPage/NotFoundPage.jsx")
-// );
-// const MovieDetailsPage = lazy(() =>
-//   import("./pages/MovieDetailsPage/MovieDetailsPage.jsx")
-// );
-// const MovieCast = lazy(() => import("./components/MovieCast/MovieCast.jsx"));
-// const MovieReviews = lazy(() =>
-//   import("./components/MovieReviews/MovieReviews.jsx")
-// );
+const HomePage = lazy(() => import("./pages/HomePage/HomePage.jsx"));
+const MoviesPage = lazy(() => import("./pages/MoviesPage/MoviesPage.jsx"));
+const NotFoundPage = lazy(() =>
+  import("./pages/NotFoundPage/NotFoundPage.jsx")
+);
+const MovieDetailsPage = lazy(() =>
+  import("./pages/MovieDetailsPage/MovieDetailsPage.jsx")
+);
+const MovieCast = lazy(() => import("./components/MovieCast/MovieCast.jsx"));
+const MovieReviews = lazy(() =>
+  import("./components/MovieReviews/MovieReviews.jsx")
+);
 
 function App() {
   const linkActiveStyle = ({ isActive }) => {
