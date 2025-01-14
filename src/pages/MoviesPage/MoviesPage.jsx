@@ -68,7 +68,7 @@ import css from "./MoviesPage.module.css";
 import toast from "react-hot-toast";
 import { useEffect, useState } from "react";
 import MovieList from "../../components/MovieList/MovieList";
-import { searchMovieOnKeyWord } from "../../api-query";
+import { searchMovieOnKeyWord } from "../../apiKey";
 import { useSearchParams } from "react-router-dom";
 
 const MoviesPage = () => {

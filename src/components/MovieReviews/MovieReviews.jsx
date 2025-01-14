@@ -109,7 +109,7 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import toast from "react-hot-toast";
-import { getReviewsMovie } from "../../api-query";
+import { getReviewsMovie } from "../../apiKey";
 import css from "./MovieReviews.module.css";
 
 const MovieReviews = () => {

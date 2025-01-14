@@ -25,7 +25,7 @@
 // export default HomePage;
 
 import css from "./HomePage.module.css";
-import { getMovies } from "../../api-query";
+import { getMovies } from "../../apiKey";
 import { useEffect, useState } from "react";
 import MovieList from "../../components/MovieList/MovieList";
 

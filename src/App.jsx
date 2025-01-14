@@ -67,7 +67,7 @@ const MovieReviews = lazy(() =>
 
 function App() {
   return (
-    <div style={{ position: "relative" }}>
+    <div className={css.Container}>
       <Navigation />
       <Suspense
         fallback={

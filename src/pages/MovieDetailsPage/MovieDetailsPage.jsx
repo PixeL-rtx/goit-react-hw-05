@@ -168,7 +168,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { NavLink, Outlet, useLocation, useParams } from "react-router-dom";
-import { getInfMovie } from "../../api-query";
+import { getInfMovie } from "../../apiKey";
 import css from "./MovieDetailsPage.module.css";
 import { Puff } from "react-loader-spinner";
 import toast from "react-hot-toast";
