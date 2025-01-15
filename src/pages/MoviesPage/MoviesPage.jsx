@@ -4,6 +4,7 @@ import { searchMovieOnKeyWord } from "../../apiKey";
 import css from "./MoviesPage.module.css";
 import Loader from "../../Loader/Loader";
 import toast from "react-hot-toast";
+import MovieList from "../../components/MovieList/MovieList";
 
 const MoviesPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -14,10 +15,10 @@ const MoviesPage = () => {
 
   useEffect(() => {
     if (!query) return;
+    setLoading(true);
+    setError(null);
 
     const searchMovie = async () => {
-      setLoading(true);
-      setError(null);
       try {
         const { data } = await searchMovieOnKeyWord(query);
         setMovies(data.results);
@@ -66,19 +67,40 @@ const MoviesPage = () => {
         <p className={css.no_results}>No movies found for "{query}"</p>
       )}
 
-      <ul className={css.movie_list}>
-        {movies.map((movie) => (
-          <li key={movie.id} className={css.movie_item}>
-            <img
-              src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-              alt={movie.title}
-              className={css.movie_image}
-            />
-            <p>{movie.title}</p>
-          </li>
-        ))}
-      </ul>
+      {!loading && !error && movies.length > 0 && <MovieList movies={movies} />}
     </div>
+    // <div className={css.container}>
+    //   <form onSubmit={handleSearch} className={css.form}>
+    //     <input
+    //       type="text"
+    //       name="query"
+    //       placeholder="Search for movies..."
+    //       className={css.field}
+    //     />
+    //     <button type="submit" className={css.subbtn}>
+    //       Search
+    //     </button>
+    //   </form>
+
+    //   {loading && <Loader />}
+    //   {error && <p className={css.error}>{error}</p>}
+    //   {!loading && !error && movies.length === 0 && query && (
+    //     <p className={css.no_results}>No movies found for "{query}"</p>
+    //   )}
+
+    //   <ul className={css.movie_list}>
+    //     {movies.map((movie) => (
+    //       <li key={movie.id} className={css.movie_item}>
+    //         <img
+    //           src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+    //           alt={movie.title}
+    //           className={css.movie_image}
+    //         />
+    //         <p>{movie.title}</p>
+    //       </li>
+    //     ))}
+    //   </ul>
+    // </div>
   );
 };
 

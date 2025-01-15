@@ -29,7 +29,6 @@ const MovieReviews = () => {
   return (
     <div>
       {loader && <p className={css["no-reviews-err"]}>Wait...</p>}
-
       <ul className={css["reviews-list"]}>
         {reviewMovie.map((item, index) => (
           <li key={index} className={css["reviews-item"]}>
