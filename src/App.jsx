@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import { lazy, Suspense } from "react";
-import { Puff } from "react-loader-spinner";
+import { FallingLines } from "react-loader-spinner";
 import css from "./App.module.css";
 
 // import Loader from "./Loader/Loader";
@@ -24,7 +24,7 @@ function App() {
       <Suspense
         fallback={
           <div className={css.loader}>
-            <Puff color="#611f1f" height={80} width={80} />
+            <FallingLines color="#066b84" height={80} width={80} />
           </div>
         }
       >

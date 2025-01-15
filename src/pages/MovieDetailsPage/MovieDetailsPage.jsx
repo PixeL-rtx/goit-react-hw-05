@@ -16,7 +16,7 @@ const MovieDetailsPage = () => {
     const queryInfoMovie = async () => {
       setLoading(true);
       try {
-        const { data } = await getMoviesInfo(moviesId.toString());
+        const { data } = await getInfMovie(moviesId.toString());
         setInfMovie([data]);
       } catch (error) {
         toast.error("Failed to load movie details. Please try again.");
@@ -33,7 +33,6 @@ const MovieDetailsPage = () => {
         Go back
       </NavLink>
 
-      <FallingLines color="#066b84" height={80} width={80} />
       <ul className={css["details-list"]}>
         {infMovie.map((item) => (
           <li key={item.id} className={css["details-item"]}>

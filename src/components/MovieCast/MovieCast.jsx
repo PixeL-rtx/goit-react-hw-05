@@ -30,11 +30,20 @@ const MovieCast = () => {
   return (
     <div>
       {loader && <p className={css.reviews_error}>Wait...</p>}
-      {castMovie.length && (
+      {castMovie.length > 0 ? (
         <ul className={css.actor_list}>
           {castMovie.map((item, index) => (
             <li key={index}>
               <div className={css.actor_container}>
+                <img
+                  src={
+                    item.profile_path
+                      ? `https://image.tmdb.org/t/p/w500${item.profile_path}`
+                      : "https://dummyimage.com/150x200/cccccc/ffffff&text=No+Image"
+                  }
+                  alt={item.name}
+                  className={css.actor_image}
+                />
                 <p>
                   <strong>Role:</strong> {item.character} -{" "}
                   <strong>Actor:</strong> {item.name}
@@ -43,6 +52,10 @@ const MovieCast = () => {
             </li>
           ))}
         </ul>
+      ) : (
+        !loader && (
+          <p className={css.reviews_error}>No cast information available.</p>
+        )
       )}
     </div>
   );
